@@ -2,8 +2,11 @@ import HomePage from "../pages/Home";
 import AuthPage from "../pages/Auth";
 import CheckoutPage from "../pages/Checkout";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { useAuth } from "../context/AuthContext";
 
 export default function Navbar() {
+  const { user, logout } = useAuth();
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -19,14 +22,23 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="navbar-auth">
-          <div className="navbar-auth-links">
-            <Link to="/auth" className="btn btn-secondary">
-              Login
-            </Link>
-            <Link to="/auth" className="btn btn-primary">
-              Signup
-            </Link>
-          </div>
+          {!user ? (
+            <div className="navbar-auth-links">
+              <Link to="/auth" className="btn btn-secondary">
+                Login
+              </Link>
+              <Link to="/auth" className="btn btn-primary">
+                Signup
+              </Link>
+            </div>
+          ) : (
+            <div className="navbar-user">
+              <span className="navbar-greeting">Hello, {user.email}</span>
+              <button className="btn btn-secondary" onClick={logout}>
+                Logout
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </nav>
