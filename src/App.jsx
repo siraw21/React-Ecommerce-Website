@@ -16,10 +16,12 @@ function App() {
         <div className="app">
           <Navbar />
           <Routes>
+
             <Route path="/" element={<Home />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/products/:id" element={<ProductDetails />} />
+            
           </Routes>
         </div>
       </CardProvider>
