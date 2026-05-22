@@ -110,7 +110,7 @@ React-Ecommerce-Website/
 └── README.md
 ```
 
-> **Note:** Update this structure to match your actual project layout.
+
 
 ---
 
@@ -149,11 +149,6 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch: `git push origin feature/your-feature-name`
 5. Open a Pull Request
 
----
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
